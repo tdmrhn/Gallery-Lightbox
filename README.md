@@ -38,18 +38,23 @@ add_filter( 'dLightbox:custom:selectors', function ( $selectors ) {
 });
 
 = Is it mobile touch friendly? =
+
 dLightbox.js supports touch, mousewheel, keyboard, and mouse drag interactions.
 
 = Is the lightbox responsive? =
+
 Yes, the lightbox feature provided by Gallery Lightbox is fully responsive, ensuring optimal viewing experiences across all devices.
 
 = Does it need jQuery? =
+
 No, there is no dependency on jQuery. dLightbox is custom coded from scratch, ensuring efficient performance and compatibility with modern web development practices.
 
 = Does the plugin impact page loading speed? =
+
 Although extremely lightweight at only 4.5kb (2kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter. This ensures minimal impact on page loading speed.
 
 = What if I encounter any issues or have feature requests? =
+
 If you encounter any issues, have feature requests, or need support, please visit the GitHub repository and create an issue. Our team will be happy to assist you.
 
 == Changelog ==
