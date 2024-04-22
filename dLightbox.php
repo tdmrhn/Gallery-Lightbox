@@ -28,41 +28,57 @@ add_action( 'enqueue_block_editor_assets', function () {
 });
 
 /* Frontend assets */
+add_filter( 'render_block_core/gallery', function ( $block_content, $block ) {
+    $is_lightbox_enabled = isset( $block['attrs']['isLightboxEnabled'] ) ? $block['attrs']['isLightboxEnabled'] : false;
+    $link_to_media = isset( $block['attrs']['linkTo'] ) && $block['attrs']['linkTo'] === 'media';
+
+    if ( ! $is_lightbox_enabled || ! $link_to_media ) {
+        return $block_content;
+    }
+
+    if ( preg_match( '/<[^>]*>/', $block_content ) ) {
+        $p = new WP_HTML_Tag_Processor( $block_content );
+        if ( $p->next_tag() ) {
+            $p->add_class( 'dhn-lightbox' );
+            $block_content = $p->get_updated_html();
+        }
+    }
+
+    enqueue_dLightbox_gallery_assets();
+
+    return $block_content;
+}, 10, 2 );
+
+
 add_action( 'wp_enqueue_scripts', function () {
-    global $post;
-    $plugin_version = get_file_data( __FILE__, array( 'Version' ) )[0];
+    $post = get_post();
     $custom_selectors = apply_filters( 'dLightbox:custom:selectors', array() );
-    $all_selectors = array_merge( $custom_selectors, array( '.wp-block-gallery', '.gallery' ) );
 
-    $resources_enqueued = false;
-    $the_post_content = $post->post_content;
-
-    foreach ( parse_blocks( $the_post_content ) as $block ) {
-        if ( $block['blockName'] === 'core/gallery' ) {
-            $is_lightbox_enabled = isset( $block['attrs']['isLightboxEnabled'] ) ? $block['attrs']['isLightboxEnabled'] : false;
-            $link_to_media = isset( $block['attrs']['linkTo'] ) && $block['attrs']['linkTo'] === 'media';
-
-            if ( $is_lightbox_enabled && $link_to_media ) {
-                $resources_enqueued = true;
-                break;
-            }
-        }
-    }
-
-    foreach ( $custom_selectors as $selector ) {
-        if ( stripos( $the_post_content, ltrim( $selector, '.' ) ) !== false ) {
-            $resources_enqueued = true;
-            break;
-        }
-    }
-
-    if ( !$resources_enqueued ) {
+    if ( empty( $custom_selectors ) || ! $post ) {
         return;
     }
 
-    wp_enqueue_script( 'gallery-dlightbox', plugins_url( '/assets/dLightbox.js', __FILE__ ), array(), $plugin_version, true );
-    wp_enqueue_style( 'gallery-dlightbox', plugins_url( '/assets/dLightbox.css', __FILE__ ), array(), $plugin_version );
-    wp_add_inline_script( 'gallery-dlightbox', 'document.addEventListener("DOMContentLoaded", function() { var selectors = ' . wp_json_encode( $all_selectors ) . '; selectors.forEach(function(selector) { document.querySelectorAll(selector).forEach(function(element) { element.classList.add("dhn-lightbox"); }); }); });','before');
-}, 10 );
+    foreach ( $custom_selectors as $selector ) {
+        if ( stripos( $post->post_content, ltrim( $selector, '.' ) ) !== false ) {
+            enqueue_dLightbox_gallery_assets();			
+            enqueue_dLightbox_gallery_inline_asset( $custom_selectors );
+            return;
+        }
+    }
+} );
+
+function enqueue_dLightbox_gallery_assets() {
+    static $resources_enqueued = false;
+    if ( ! $resources_enqueued ) {		
+        $plugin_version = get_file_data( __FILE__, array( 'Version' ) )[0];
+        wp_enqueue_script( 'gallery-dlightbox', plugins_url( '/assets/dLightbox.js', __FILE__ ), array(), $plugin_version, true );
+        wp_enqueue_style( 'gallery-dlightbox', plugins_url( '/assets/dLightbox.css', __FILE__ ), array(), $plugin_version );
+        $resources_enqueued = true;		
+    }
+}
+
+function enqueue_dLightbox_gallery_inline_asset( $custom_selectors ) {
+    wp_add_inline_script( 'gallery-dlightbox', 'document.addEventListener("DOMContentLoaded", function() { var selectors = ' . wp_json_encode( $custom_selectors ) . '; selectors.forEach(function(selector) { document.querySelectorAll(selector).forEach(function(element) { element.classList.add("dhn-lightbox"); }); }); });', 'before' );
+}
 
 ?>
