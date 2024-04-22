@@ -50,22 +50,40 @@ add_filter( 'render_block_core/gallery', function ( $block_content, $block ) {
 }, 10, 2 );
 
 
-add_action( 'wp_enqueue_scripts', function () {
-    $post = get_post();
+add_action( 'wp_footer', function () {
     $custom_selectors = apply_filters( 'dLightbox:custom:selectors', array() );
 
-    if ( empty( $custom_selectors ) || ! $post ) {
+    if ( empty( $custom_selectors ) ) {
         return;
     }
 
-    foreach ( $custom_selectors as $selector ) {
-        if ( stripos( $post->post_content, ltrim( $selector, '.' ) ) !== false ) {
-            enqueue_dLightbox_gallery_assets();			
-            enqueue_dLightbox_gallery_inline_asset( $custom_selectors );
-            return;
-        }
-    }
-} );
+	ob_start();
+    ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var html = document.documentElement.innerHTML;
+            var selectors = <?php echo wp_json_encode( $custom_selectors ); ?>;
+            var found = false;
+
+            selectors.forEach(selector => {
+    			if (html.includes(selector)) {
+        			found = true;
+        			return;
+    			}
+			});
+
+            if (found) {
+                <?php 
+					enqueue_dLightbox_gallery_assets();
+        			enqueue_dLightbox_gallery_inline_asset( $custom_selectors ); 
+				?>
+            }
+        });
+    </script>
+    <?php
+    $html = ob_get_clean();
+    
+}, 10, 2 );
 
 function enqueue_dLightbox_gallery_assets() {
     static $resources_enqueued = false;
