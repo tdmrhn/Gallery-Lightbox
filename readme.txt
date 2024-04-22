@@ -14,7 +14,7 @@ Extremely lightweight yet powerful and touch-friendly, jQuery-free, Lightbox tog
 
 This WordPress Plugin adds Lightbox feature to the core Gallery block with a simple toggle button. Easily enable or disable it for any gallery block by selecting 'media file' under the 'link to' dropdown. Once selected, the Lightbox toggle will appear. It also supports custom coded galleries through a filter (check FAQ).
 
-dLightbox.js is fully responsive, supporting touch, mousewheel, keyboard, and mouse drag interactions, as well as slide counters and figcaption. With no dependency on jQuery, dLightbox.js ensures optimal viewing experiences across all devices.
+<a href="https://github.com/tdmrhn/dLightbox.js" target=_blank>dLightbox.js</a> is fully responsive, supporting touch, mousewheel, keyboard, and mouse drag interactions, as well as slide counters and figcaption. With no dependency on jQuery, dLightbox.js ensures optimal viewing experiences across all devices.
 
 Although extremely lightweight at only 4.5kb (2kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter.
 
