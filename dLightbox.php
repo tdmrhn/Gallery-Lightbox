@@ -62,7 +62,7 @@ add_action( 'wp_enqueue_scripts', function () {
 
     wp_enqueue_script( 'gallery-dlightbox', plugins_url( '/assets/dLightbox.js', __FILE__ ), array(), $plugin_version, true );
     wp_enqueue_style( 'gallery-dlightbox', plugins_url( '/assets/dLightbox.css', __FILE__ ), array(), $plugin_version );
-    wp_add_inline_script( 'gallery-dlightbox', 'document.addEventListener("DOMContentLoaded", function() { var selectors = ' . json_encode( $all_selectors ) . '; selectors.forEach(function(selector) { document.querySelectorAll(selector).forEach(function(element) { element.classList.add("dhn-lightbox"); }); }); });','before');
+    wp_add_inline_script( 'gallery-dlightbox', 'document.addEventListener("DOMContentLoaded", function() { var selectors = ' . wp_json_encode( $all_selectors ) . '; selectors.forEach(function(selector) { document.querySelectorAll(selector).forEach(function(element) { element.classList.add("dhn-lightbox"); }); }); });','before');
 }, 10 );
 
 ?>
