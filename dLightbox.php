@@ -1,7 +1,7 @@
 <?php 
 /**
- * Plugin Name:         Gallery Lightbox - dLightbox
- * Plugin URI:          https://github.com/tdmrhn/gallery-block-lightbox
+ * Plugin Name:         Gallery Lightbox - dLightbox.js
+ * Plugin URI:          https://github.com/tdmrhn/Gallery-Lightbox/
  * Description:         Simple yet powerful jQuery-free Lightbox toggle button for the core Gallery block and custom code galleries.
  * Version:             0.1
  * Requires at least:   6.3
