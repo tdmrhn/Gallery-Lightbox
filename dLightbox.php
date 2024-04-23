@@ -3,7 +3,7 @@
  * Plugin Name:         Gallery Lightbox - dLightbox.js
  * Plugin URI:          https://github.com/tdmrhn/Gallery-Lightbox/
  * Description:         Simple yet powerful jQuery-free Lightbox toggle button for the core Gallery block and custom code galleries.
- * Version:             0.1
+ * Version:             0.2
  * Requires at least:   6.3
  * Requires PHP:        7.4
  * Author:              dmrhn
@@ -30,6 +30,7 @@ add_action( 'enqueue_block_editor_assets', function () {
 /* Frontend assets */
 add_filter( 'render_block_core/gallery', function ( $block_content, $block ) {
     $is_lightbox_enabled = isset( $block['attrs']['isLightboxEnabled'] ) ? $block['attrs']['isLightboxEnabled'] : false;
+    $show_lightbox_thumbnails = isset( $block['attrs']['showLightboxThumbnails'] ) ? $block['attrs']['showLightboxThumbnails'] : false;
     $link_to_media = isset( $block['attrs']['linkTo'] ) && $block['attrs']['linkTo'] === 'media';
 
     if ( ! $is_lightbox_enabled || ! $link_to_media ) {
@@ -40,6 +41,9 @@ add_filter( 'render_block_core/gallery', function ( $block_content, $block ) {
         $p = new WP_HTML_Tag_Processor( $block_content );
         if ( $p->next_tag() ) {
             $p->add_class( 'dhn-lightbox' );
+            if ( $show_lightbox_thumbnails ) {
+                $p->add_class( 'dLightbox-thumbnails' );
+            }
             $block_content = $p->get_updated_html();
         }
     }
@@ -48,6 +52,7 @@ add_filter( 'render_block_core/gallery', function ( $block_content, $block ) {
 
     return $block_content;
 }, 10, 2 );
+
 
 
 add_action( 'wp_footer', function () {
@@ -89,8 +94,8 @@ function enqueue_dLightbox_gallery_assets() {
     static $resources_enqueued = false;
     if ( ! $resources_enqueued ) {		
         $plugin_version = get_file_data( __FILE__, array( 'Version' ) )[0];
-        wp_enqueue_script( 'gallery-dlightbox', plugins_url( '/assets/dLightbox.js', __FILE__ ), array(), $plugin_version, true );
-        wp_enqueue_style( 'gallery-dlightbox', plugins_url( '/assets/dLightbox.css', __FILE__ ), array(), $plugin_version );
+        wp_enqueue_script( 'gallery-dlightbox', plugins_url( '/assets/dLightbox.min.js', __FILE__ ), array(), $plugin_version, true );
+        wp_enqueue_style( 'gallery-dlightbox', plugins_url( '/assets/dLightbox.min.css', __FILE__ ), array(), $plugin_version );
         $resources_enqueued = true;		
     }
 }

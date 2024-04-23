@@ -4,7 +4,7 @@ Donate link: https://dmrhn.com/
 Tags: gallery, lightbox, touch, drag, responsive
 Requires at least: 5.0
 Tested up to: 6.5
-Stable tag: 0.1
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,22 +14,23 @@ Extremely lightweight yet powerful and touch-friendly, jQuery-free, Lightbox tog
 
 This WordPress Plugin adds Lightbox feature to the core Gallery block with a simple toggle button. Easily enable or disable it for any gallery block by selecting 'media file' under the 'link to' dropdown. Once selected, the Lightbox toggle will appear. It also supports custom coded galleries through a filter (check FAQ).
 
-<a href="https://github.com/tdmrhn/dLightbox.js" target=_blank>dLightbox.js</a> is fully responsive, supporting touch, mousewheel, keyboard, and mouse drag interactions, as well as slide counters and figcaption. With no dependency on jQuery, dLightbox.js ensures optimal viewing experiences across all devices.
+<a href="https://github.com/tdmrhn/dLightbox.js" target=_blank>dLightbox.js</a> is fully responsive, supporting touch, mousewheel, keyboard, and mouse drag interactions, build-in thumbnails, as well as slide counters and figcaption. With no dependency on jQuery, dLightbox.js ensures optimal viewing experiences across all devices.
 
-Although extremely lightweight at only 4.5kb (2kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter.
+Although extremely lightweight at only 6kb (2.2kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter.
 
 Features:
 
 * Enable/disable with a simple toggle button for each Gallery block individually.
 * Custom coded galleries support.
 * Supports touch, mousewheel, keyboard, and mouse drag interactions.
+* Lightbox thumbnails with an easy toggle button.
 * Slide counter and figcaption support.
-* jQuery-Free, lightweight at only 4.5kb (2kb gzipped) for both dLightbox.js and dLightbox.css
+* jQuery-Free, lightweight at only 6kb (2.2kb gzipped) for both dLightbox.js and dLightbox.css
 * Fully responsive.
 
 == Installation ==
 
-1. Download the plugin ZIP file from [Gallery Lightbox](#).
+1. Download the plugin ZIP file from <a href="https://github.com/tdmrhn/Gallery-Lightbox/blob/main/gallery-lightbox.zip" target=_blank>Gallery Lightbox</a>.
 2. In your WordPress admin panel, navigate to Plugins -> Add New.
 3. Click the "Upload Plugin" button, choose the ZIP file you downloaded, and click "Install Now."
 4. After installation, activate the plugin.
@@ -50,6 +51,9 @@ add_filter( 'dLightbox:custom:selectors', function ( $selectors ) {
 = Is it mobile touch friendly? =
 dLightbox.js supports touch, mousewheel, keyboard, and mouse drag interactions.
 
+= Is it supports thumbnails? =
+Yes it supports Lightbox thumbnails with an easy toggle. Also with "dLightbox-thumbnails" class you can easily adapt thumbnails to your custom coded galleries.
+
 = Is the lightbox responsive? =
 Yes, the lightbox feature provided by Gallery Lightbox is fully responsive, ensuring optimal viewing experiences across all devices.
 
@@ -57,12 +61,14 @@ Yes, the lightbox feature provided by Gallery Lightbox is fully responsive, ensu
 No, there is no dependency on jQuery. dLightbox is custom coded from scratch, ensuring efficient performance and compatibility with modern web development practices.
 
 = Does the plugin impact page loading speed? =
-Although extremely lightweight at only 4.5kb (2kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter. This ensures minimal impact on page loading speed.
+Although extremely lightweight at only 6kb (2.2kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter. This ensures minimal impact on page loading speed.
 
 = What if I encounter any issues or have feature requests? =
 If you encounter any issues, have feature requests, or need support, please visit the GitHub repository and create an issue. Our team will be happy to assist you.
 
 == Changelog ==
+= 0.2 =
+* Added Dynamic Thumbnails
 
 = 0.1 =
 * Initial release
