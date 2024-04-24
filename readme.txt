@@ -16,7 +16,7 @@ This WordPress Plugin adds Lightbox feature to the core Gallery block with a sim
 
 <a href="https://github.com/tdmrhn/dLightbox.js" target=_blank>dLightbox.js</a> is fully responsive, supporting touch, mousewheel, keyboard, and mouse drag interactions, build-in thumbnails, as well as slide counters and figcaption. With no dependency on jQuery, dLightbox.js ensures optimal viewing experiences across all devices.
 
-Although extremely lightweight at only 6kb (2.2kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter.
+Although extremely lightweight at only 6.2kb (2.3kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter.
 
 Features:
 
@@ -25,7 +25,7 @@ Features:
 * Supports touch, mousewheel, keyboard, and mouse drag interactions.
 * Lightbox thumbnails with an easy toggle button.
 * Slide counter and figcaption support.
-* jQuery-Free, lightweight at only 6kb (2.2kb gzipped) for both dLightbox.js and dLightbox.css
+* jQuery-Free, lightweight at only 6.2kb (2.3kb gzipped) for both dLightbox.js and dLightbox.css
 * Fully responsive.
 
 == Installation ==
@@ -61,7 +61,7 @@ Yes, the lightbox feature provided by Gallery Lightbox is fully responsive, ensu
 No, there is no dependency on jQuery. dLightbox is custom coded from scratch, ensuring efficient performance and compatibility with modern web development practices.
 
 = Does the plugin impact page loading speed? =
-Although extremely lightweight at only 6kb (2.2kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter. This ensures minimal impact on page loading speed.
+Although extremely lightweight at only 6.2kb (2.3kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter. This ensures minimal impact on page loading speed.
 
 = What if I encounter any issues or have feature requests? =
 If you encounter any issues, have feature requests, or need support, please visit the GitHub repository and create an issue. Our team will be happy to assist you.
