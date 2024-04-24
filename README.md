@@ -64,6 +64,9 @@ If you encounter any issues, have feature requests, or need support, please visi
 
 == Changelog ==
 
+= 0.2.1 =
+* Added Caption Toggle
+* 
 = 0.2 =
 * Added Dynamic Thumbnails
 
