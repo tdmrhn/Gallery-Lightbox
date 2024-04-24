@@ -4,7 +4,7 @@ Donate link: https://dmrhn.com/
 Tags: gallery, lightbox, touch, drag, responsive
 Requires at least: 5.0
 Tested up to: 6.5
-Stable tag: 0.2
+Stable tag: 0.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,9 @@ Although extremely lightweight at only 6kb (2.2kb gzipped) for both dLightbox.js
 If you encounter any issues, have feature requests, or need support, please visit the GitHub repository and create an issue. Our team will be happy to assist you.
 
 == Changelog ==
+= 0.2.1 =
+* Added Caption Toggle
+
 = 0.2 =
 * Added Dynamic Thumbnails
 
