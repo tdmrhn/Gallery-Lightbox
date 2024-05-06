@@ -4,7 +4,7 @@ Donate link: https://dmrhn.com/
 Tags: gallery, lightbox, touch, drag, responsive
 Requires at least: 5.0
 Tested up to: 6.5
-Stable tag: 0.2.1
+Stable tag: 0.4.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,14 @@ Although extremely lightweight at only 6.2kb (2.3kb gzipped) for both dLightbox.
 If you encounter any issues, have feature requests, or need support, please visit the GitHub repository and create an issue. Our team will be happy to assist you.
 
 == Changelog ==
+
+= 0.4 =
+* Improved double click to zoom
+* Added double tap to zoom on mobile
+
+= 0.3 =
+* Added Zoom to original image size on double click
+
 = 0.2.1 =
 * Added Caption Toggle
 

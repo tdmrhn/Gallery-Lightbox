@@ -3,7 +3,7 @@
  * Plugin Name:         Gallery Lightbox - dLightbox.js
  * Plugin URI:          https://github.com/tdmrhn/Gallery-Lightbox/
  * Description:         Simple yet powerful jQuery-free Lightbox toggle button for the core Gallery block and custom code galleries.
- * Version:             0.2.1
+ * Version:             0.4.1
  * Requires at least:   6.3
  * Requires PHP:        7.4
  * Author:              dmrhn
@@ -67,32 +67,10 @@ add_action( 'wp_footer', function () {
         return;
     }
 
-	ob_start();
-    ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var html = document.documentElement.innerHTML;
-            var selectors = <?php echo wp_json_encode( $custom_selectors ); ?>;
-            var found = false;
 
-            selectors.forEach(selector => {
-    			if (html.includes(selector)) {
-        			found = true;
-        			return;
-    			}
-			});
-
-            if (found) {
-                <?php 
-					enqueue_dLightbox_gallery_assets();
-        			enqueue_dLightbox_gallery_inline_asset( $custom_selectors ); 
-				?>
-            }
-        });
-    </script>
-    <?php
-    $html = ob_get_clean();
-    
+	enqueue_dLightbox_gallery_assets();
+	enqueue_dLightbox_gallery_inline_asset( $custom_selectors );
+		    
 }, 10, 2 );
 
 function enqueue_dLightbox_gallery_assets() {
