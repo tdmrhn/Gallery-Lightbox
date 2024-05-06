@@ -6,7 +6,7 @@ This WordPress Plugin adds Lightbox feature to the core Gallery block with a sim
 
 <a href="https://github.com/tdmrhn/dLightbox.js" target=_blank>dLightbox.js</a> is fully responsive, supporting touch, mousewheel, keyboard, and mouse drag interactions, build-in thumbnails, as well as slide counters and figcaption. With no dependency on jQuery, dLightbox.js ensures optimal viewing experiences across all devices.
 
-Although extremely lightweight at only 6.2kb (2.3kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter.
+Although extremely lightweight at only 2.75kb gzipped for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter.
 
 Features:
 
@@ -15,7 +15,7 @@ Features:
 * Supports touch, mousewheel, keyboard, and mouse drag interactions.
 * Lightbox thumbnails with an easy toggle button.
 * Slide counter and figcaption support.
-* jQuery-Free, lightweight at only 6.2kb (2.3kb gzipped) for both dLightbox.js and dLightbox.css
+* jQuery-Free, lightweight at only 2.75kb gzipped for both dLightbox.js and dLightbox.css
 * Fully responsive.
 
 == Installation ==
@@ -33,11 +33,12 @@ Enable or disable the Lightbox feature for any gallery block by selecting 'media
 = Can I use Lightbox with my custom galleries? =
 Yes, you can use the lightbox with custom galleries by using the provided filter. Example code is provided for reference.
 
+```
 add_filter( 'dLightbox:custom:selectors', function ( $selectors ) {
     $selectors = array_merge( $selectors, array('.my-gallery', '.your-gallery') );
     return $selectors;
 });
-
+```
 = Is it mobile touch friendly? =
 
 dLightbox.js supports touch, mousewheel, keyboard, and mouse drag interactions.
@@ -56,13 +57,20 @@ No, there is no dependency on jQuery. dLightbox is custom coded from scratch, en
 
 = Does the plugin impact page loading speed? =
 
-Although extremely lightweight at only 6.2kb (2.3kb gzipped) for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter. This ensures minimal impact on page loading speed.
+Although extremely lightweight at only 2.75kb gzipped for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter. This ensures minimal impact on page loading speed.
 
 = What if I encounter any issues or have feature requests? =
 
 If you encounter any issues, have feature requests, or need support, please visit the GitHub repository and create an issue. Our team will be happy to assist you.
 
 == Changelog ==
+
+= 0.4 =
+* Improved double click to zoom
+* Added double tap to zoom on mobile
+
+= 0.3 =
+* Added Zoom to original image size on double click
 
 = 0.2.1 =
 * Added Caption Toggle
