@@ -6,7 +6,7 @@ This WordPress Plugin adds Lightbox feature to the core Gallery block with a sim
 
 <a href="https://github.com/tdmrhn/dLightbox.js" target=_blank>dLightbox.js</a> is fully responsive, supporting touch, mousewheel, keyboard, and mouse drag interactions, build-in thumbnails, as well as slide counters and figcaption. With no dependency on jQuery, dLightbox.js ensures optimal viewing experiences across all devices.
 
-Although extremely lightweight at only 2.75kb gzipped for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter.
+Although extremely lightweight at only 2.85kb gzipped for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter.
 
 Features:
 
@@ -15,14 +15,14 @@ Features:
 * Supports touch, mousewheel, keyboard, and mouse drag interactions.
 * Lightbox thumbnails with an easy toggle button.
 * Slide counter and figcaption support.
-* jQuery-Free, lightweight at only 2.75kb gzipped for both dLightbox.js and dLightbox.css
+* jQuery-Free, lightweight at only 2.85kb gzipped for both dLightbox.js and dLightbox.css
 * Fully responsive.
 
 == Installation ==
 
-1. Download the plugin ZIP file from <a href="https://github.com/tdmrhn/Gallery-Lightbox/blob/main/gallery-lightbox.zip" target=_blank>Gallery Lightbox</a>.
-2. In your WordPress admin panel, navigate to Plugins -> Add New.
-3. Click the "Upload Plugin" button, choose the ZIP file you downloaded, and click "Install Now."
+1. In your WordPress admin panel, navigate to Plugins -> Add New
+2. Search for  <a href="https://wordpress.org/plugins/easy-gallery-lightbox/" target=_blank>Gallery Block Easy Lightbox</a>
+3. Click "Install Now."
 4. After installation, activate the plugin.
 
 == Frequently Asked Questions ==
@@ -57,13 +57,17 @@ No, there is no dependency on jQuery. dLightbox is custom coded from scratch, en
 
 = Does the plugin impact page loading speed? =
 
-Although extremely lightweight at only 2.75kb gzipped for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter. This ensures minimal impact on page loading speed.
+Although extremely lightweight at only 2.85kb gzipped for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter. This ensures minimal impact on page loading speed.
 
 = What if I encounter any issues or have feature requests? =
 
 If you encounter any issues, have feature requests, or need support, please visit the GitHub repository and create an issue. Our team will be happy to assist you.
 
 == Changelog ==
+
+= 0.5 =
+* Improved dLightbox.js code
+* Added auto carousel to thumbnails container if wider than viewport
 
 = 0.4 =
 * Improved double click to zoom
