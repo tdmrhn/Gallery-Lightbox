@@ -1,13 +1,13 @@
 <?php 
 /**
  * Plugin Name:         Gallery Block Lightbox
- * Plugin URI:          https://github.com/tdmrhn/easy-gallery-lightbox/
+ * Plugin URI:          https://taha.tr/plugins/easy-gallery-lightbox/
  * Description:         Simple yet powerful jQuery-free Lightbox toggle button for the core Gallery block and custom code galleries.
- * Version:             0.5
+ * Version:             0.6
  * Requires at least:   6.3
  * Requires PHP:        7.4
  * Author:              dmrhn
- * Author URI:          https://dmrhn.com/
+ * Author URI:          https://taha.tr/
  * License:             GPLv2
  * License URI:         https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * Text Domain:         easy-gallery-lightbox
@@ -23,8 +23,8 @@ add_action( 'enqueue_block_editor_assets', function () {
     //$dependencies  = array('react', 'wp-block-editor', 'wp-components', 'wp-hooks', 'wp-i18n');
     $dependencies  = array('wp-block-editor', 'wp-components');
 
-    wp_enqueue_script('easy-gallery-dlightbox-editor', plugins_url( '/build/index.min.js', __FILE__ ), $dependencies, $plugin_version, true );
-    wp_enqueue_style( 'easy-gallery-dlightbox-editor', plugins_url( '/build/editor.css', __FILE__ ), array(), $plugin_version );
+    wp_enqueue_script('easy-gallery-lightbox-editor', plugins_url( '/build/index.min.js', __FILE__ ), $dependencies, $plugin_version, true );
+    wp_enqueue_style( 'easy-gallery-lightbox-editor', plugins_url( '/build/editor.css', __FILE__ ), array(), $plugin_version );
 });
 
 /* Frontend assets */
@@ -77,8 +77,8 @@ function enqueue_dLightbox_gallery_assets() {
     static $resources_enqueued = false;
     if ( ! $resources_enqueued ) {		
         $plugin_version = get_file_data( __FILE__, array( 'Version' ) )[0];
-        wp_enqueue_script( 'easy-gallery-dlightbox', plugins_url( '/build/dLightbox.min.js', __FILE__ ), array(), $plugin_version, true );
-        wp_enqueue_style( 'easy-gallery-dlightbox', plugins_url( '/build/dLightbox.min.css', __FILE__ ), array(), $plugin_version );
+        wp_enqueue_script( 'easy-gallery-lightbox', plugins_url( '/build/dLightbox.min.js', __FILE__ ), array(), $plugin_version, true );
+        wp_enqueue_style( 'easy-gallery-lightbox', plugins_url( '/build/dLightbox.min.css', __FILE__ ), array(), $plugin_version );
         $resources_enqueued = true;		
     }
 }

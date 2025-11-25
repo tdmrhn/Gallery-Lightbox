@@ -1,10 +1,10 @@
-=== Gallery Block Easy Lightbox ===
+=== Gallery Block Lightbox ===
 Contributors: dmrhn
-Donate link: https://dmrhn.com/
-Tags: gallery, lightbox, gallery block, carousel, slider
-Requires at least: 6.0
-Tested up to: 6.8.1
-Stable tag: 0.5
+Donate link: https://taha.tr/
+Tags: gallery, lightbox, gallery block, carousel, slider, gallery lightbox, gallery bock lightbox, easy lightbox, block lightbox, gallery slider, gallery carousel, block carousel, gallery modal
+Requires at least: 6.3
+Tested up to: 6.9
+Stable tag: 0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ This WordPress Plugin adds Lightbox feature to the core Gallery block with a sim
 
 <a href="https://github.com/tdmrhn/dLightbox.js" target=_blank>dLightbox.js</a> is fully responsive, supporting touch, mousewheel, keyboard, and mouse drag interactions, double click or tap/touch to zoom original image, build-in thumbnails, as well as slide counters and figcaption. With no dependency on jQuery, dLightbox.js ensures optimal viewing experiences across all devices.
 
-Although extremely lightweight at only 2.85kb gzipped for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter.
+Although extremely lightweight at only 2.78kb gzipped for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter.
 
 == Features ==
 
@@ -26,7 +26,7 @@ Although extremely lightweight at only 2.85kb gzipped for both dLightbox.js and 
 * Double click or tap/touch to zoom original image.
 * Lightbox thumbnails with an easy toggle button.
 * Slide counter and figcaption support.
-* jQuery-Free, lightweight at only 2.85kb gzipped for both dLightbox.js and dLightbox.css
+* jQuery-Free, lightweight at only 2.78kb gzipped for both dLightbox.js and dLightbox.css
 * Fully responsive.
 
 == Installation ==
@@ -62,12 +62,16 @@ Yes, the lightbox feature provided by Gallery Lightbox is fully responsive, ensu
 No, there is no dependency on jQuery. dLightbox is custom coded from scratch, ensuring efficient performance and compatibility with modern web development practices.
 
 = Does the plugin impact page loading speed? =
-Although extremely lightweight at only 2.85kb gzipped for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter. This ensures minimal impact on page loading speed.
+Although extremely lightweight at only 2.78kb gzipped for both dLightbox.js and dLightbox.css, the plugin only loads assets into the page if there is a core Gallery block or custom selectors defined via a filter. This ensures minimal impact on page loading speed.
 
 = What if I encounter any issues or have feature requests? =
 If you encounter any issues, have feature requests, or need support, please visit the GitHub repository and create an issue. Our team will be happy to assist you.
 
 == Changelog ==
+
+= 0.6 =
+* Improved dLightbox.js code
+* Fixed an issue when toogle off thumbnails
 
 = 0.5 =
 * Improved dLightbox.js code
